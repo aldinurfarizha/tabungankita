@@ -7,17 +7,17 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="http://localhost/tabungankita/admin/siswa">
             <i class="fas fa-fw fa-users"></i>
             <span>Siswa</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="http://localhost/tabungankita/admin/tabungan">
             <i class="fas fa-fw fa-university "></i>
             <span>Tabungan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="http://localhost/tabungankita/admin/setting">
             <i class="fas fa-fw fa-cog"></i>
             <span>Settings</span></a>
     </li>
