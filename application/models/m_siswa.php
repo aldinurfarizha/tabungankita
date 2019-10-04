@@ -15,5 +15,19 @@ class m_siswa extends CI_Model{
         $this->db->delete($table);
 
     }
+    function tampil_siswa(){
+   
+        $hsl=$this->db->query("SELECT * FROM siswa ");
+        return $hsl;
+    }
+    function update_siswa($id_siswa,$nama,$alamat,$telepon){
+		$hsl=$this->db->query("UPDATE siswa SET nama='$nama',alamat='$alamat',telepon='$telepon' WHERE id_siswa='$id_siswa'");
+		return $hsl;
+    }
+    function hapus_siswa($id_siswa){
+		$hsl=$this->db->query("DELETE FROM siswa where id_siswa='$id_siswa'");
+		return $hsl;
+	}
 }
+
 ?>

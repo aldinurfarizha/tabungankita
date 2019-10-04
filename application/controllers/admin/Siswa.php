@@ -9,8 +9,7 @@ class Siswa extends CI_Controller {
 	public function index()
 	{
 
-		$data['siswa']=$this->m_siswa->get_data()->
-		result();
+		$data['data']=$this->m_siswa->tampil_siswa();
 		$this->load->view('admin/siswa',$data);
 	}
 	public function tambah_aksi(){
@@ -30,20 +29,22 @@ class Siswa extends CI_Controller {
 		$this->session->set_flashdata('message', 'Data Berhasil Di Input');
 		redirect('admin/siswa');
 	}
-	public function hapus ($id_siswa)
+	public function hapus_siswa()
     {
-        $where = array ('id_siswa' => $id_siswa);
-        $this->m_siswa->hapus_data($where, 'siswa');
+		$id_siswa=$this->input->post('id_siswa');
+		$this->m_siswa->hapus_siswa($id_siswa);
 		redirect('admin/siswa');
 	}
-	public function edit ($id_siswa)
+	public function edit_siswa()
     {
-        $where = array ('noid' => $id_siswa);
-        $data['siswa'] = $this->m_siswa->edit_data($where, 'siswa')->result();
-        $this->load->view('templates/header');
-		$this->load->view('templates/sidebar');
-		$this->load->view('edit', $data);
-		$this->load->view('templates/footer');
+		$id_siswa=$this->input->post('id_siswa');
+		$nama=$this->input->post('nama');
+		$alamat=$this->input->post('alamat');
+		$telepon=$this->input->post('telepon');
+	
+		$this->m_siswa->update_siswa($id_siswa,$nama,$alamat,$telepon);
+	
+		redirect('admin/siswa');
     }
 	
 }

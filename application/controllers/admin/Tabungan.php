@@ -8,7 +8,8 @@ class Tabungan extends CI_Controller {
 
 	public function index()
 	{
-        // load view admin/overview.php
-        $this->load->view("admin/tabungan");
+		$data['data']=$this->m_tabungan->tampil_tabungan();
+        $this->load->view("admin/tabungan",$data);
 	}
+	
 }
