@@ -26,6 +26,17 @@ class m_tabungan extends CI_Model{
         return $hsl;
     }
    
-}
 
+
+    function detail_siswa(){
+        $hsl=$this->db->query("");
+        return $hsl;
+    }
+    function detail_tabungan(){
+        $hsl=$this->db->query("select  *
+        from 
+        tabungan");
+        return $hsl;
+    }
+}
 ?>

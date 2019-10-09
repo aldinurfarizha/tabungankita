@@ -17,6 +17,16 @@
             <span>Tabungan</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="http://localhost/tabungankita/admin/setoran">
+            <i class="fas fa-fw fa-upload"></i>
+            <span>Setoran</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://localhost/tabungankita/admin/penarikan">
+            <i class="fas fa-fw fa-download "></i>
+            <span>Penarikan</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="http://localhost/tabungankita/admin/setting">
             <i class="fas fa-fw fa-cog"></i>
             <span>Settings</span></a>

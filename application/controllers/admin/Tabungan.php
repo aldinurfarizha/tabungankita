@@ -11,5 +11,8 @@ class Tabungan extends CI_Controller {
 		$data['data']=$this->m_tabungan->tampil_tabungan();
         $this->load->view("admin/tabungan",$data);
 	}
+
+
+	
 	
 }

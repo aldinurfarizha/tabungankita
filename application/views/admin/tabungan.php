@@ -26,9 +26,7 @@
 </div> 
 <?php endif; ?>
 	<p align="right">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>
- Tambah Siswa
-</button>
+	
 </p>
 	
 	<br>
@@ -61,7 +59,8 @@
 	<td><?php echo $nama;?></td>
 	<td><?php echo $alamat;?></td>
 	<td><?php echo $setoran-$penarikan;?></td>
-	<td><a class="btn btn-xs btn-warning" href="#modalEditSiswa<?php echo $id_siswa?>" data-toggle="modal" title="Edit"><span class="fa fa-edit"></span> Detail</a></td>
+	<td><?php echo anchor ('admin/detail/rinci/'.$id_siswa, '<div class="btn btn-primary btn-sm"><i class ="fa fa-edit">Detail</i></div>')?></td>
+	
 		
 </tr>
 <?php endforeach; ?>
@@ -74,7 +73,8 @@
 <?php $this->load->view("admin/_partials/js.php") ?>
     
 	<!-- Button trigger modal -->
-
+	
+	
 
 </body>
 </html>
