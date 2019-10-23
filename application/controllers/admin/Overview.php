@@ -6,12 +6,17 @@ class Overview extends CI_Controller {
 		parent::__construct();
 	}
 
-	public function index()
-	{
+	public function index(){
+	if($this->session->userdata('level')=='1'){
 		$data['saldo']=$this->m_overview->tampil_saldo();
 		$data['siswa']=$this->m_overview->tampil_jumlah_siswa();
 		$data['setor']=$this->m_overview->tampil_setor();
 		$data['penarikan']=$this->m_overview->tampil_penarikan();
         $this->load->view("admin/overview",$data);
-	}
+	
+	}else{
+		echo "kamu ga ada akses";
+    }
+}
+		
 }

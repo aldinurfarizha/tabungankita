@@ -15,6 +15,10 @@ class m_siswa extends CI_Model{
         $this->db->delete($table);
 
     }
+    function cari_siswa($nama){
+      $hsl=$this->db->query("SELECT * from siswa where nama like '%".$nama."%'");
+      return $hsl;
+    }
     function tampil_siswa(){
    
         $hsl=$this->db->query("SELECT * FROM siswa ");

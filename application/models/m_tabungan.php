@@ -26,7 +26,14 @@ class m_tabungan extends CI_Model{
         return $hsl;
     }
    
-
+    function cari_siswa($id){
+        $hsl=$this->db->query("SELECT tabungan.id_siswa, tabungan.saldo, siswa.id_siswa,
+        siswa.nama,
+        siswa.jenis_kelamin,
+        siswa.alamat,
+        siswa.telepon from tabungan, siswa where tabungan.id_siswa=$id order by tabungan.saldo DESC LIMIT 1");
+        return $hsl;
+      }
 
     function detail_siswa(){
         $hsl=$this->db->query("");

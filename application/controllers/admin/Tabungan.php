@@ -11,7 +11,13 @@ class Tabungan extends CI_Controller {
 		$data['data']=$this->m_tabungan->tampil_tabungan();
         $this->load->view("admin/tabungan",$data);
 	}
-
+	public function cari(){
+		
+		$id=$this->input->post('cari');
+		$this->m_tabungan->cari_siswa($id);
+		$data['data']=$this->m_tabungan->cari_siswa($id);
+		$this->load->view('admin/tabungan',$data);
+	}
 
 	
 	

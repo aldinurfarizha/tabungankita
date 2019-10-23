@@ -12,6 +12,13 @@ class Siswa extends CI_Controller {
 		$data['data']=$this->m_siswa->tampil_siswa();
 		$this->load->view('admin/siswa',$data);
 	}
+	public function cari(){
+		
+		$nama=$this->input->post('cari');
+		$this->m_siswa->cari_siswa($nama);
+		$data['data']=$this->m_siswa->cari_siswa($nama);
+		$this->load->view('admin/siswa',$data);
+	}
 	public function tambah_aksi(){
 		$id_siswa		=$this->input->post('id_siswa');
 		$nama			=$this->input->post('nama');

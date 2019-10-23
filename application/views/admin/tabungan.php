@@ -15,8 +15,11 @@
 
 		<div class="container-fluid">
 
-	<h1>Data Tabungan<br></h1>
-	    
+<center><h1>Data Tabungan<br></h1></center>
+	<form action="<?=site_url('admin/tabungan/cari')?>" method="post">
+	<input type="text" placeholder="Cari Berdasarkan Nama" name="cari">
+  <button type="submit" class="btn btn-success"  value="Cari" ><i class="fa fa-search"></i></button>
+</form>
 	<?php if($this->session->flashdata('message') == TRUE):?>
 	<div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">

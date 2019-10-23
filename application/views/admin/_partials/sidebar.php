@@ -7,28 +7,28 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/tabungankita/admin/siswa">
+        <a class="nav-link" href="<?=site_url('admin/siswa')?>">
             <i class="fas fa-fw fa-users"></i>
             <span>Siswa</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/tabungankita/admin/tabungan">
+        <a class="nav-link" href="<?=site_url('admin/tabungan')?>">
             <i class="fas fa-fw fa-university "></i>
             <span>Tabungan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/tabungankita/admin/setoran">
+        <a class="nav-link" href="<?=site_url('admin/setoran')?>">
             <i class="fas fa-fw fa-upload"></i>
             <span>Setoran</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/tabungankita/admin/penarikan">
+        <a class="nav-link" href="<?=site_url('admin/penarikan')?>">
             <i class="fas fa-fw fa-download "></i>
             <span>Penarikan</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="http://localhost/tabungankita/admin/setting">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span></a>
+        <a class="nav-link" href="<?=site_url('Auth/logout')?>">
+            <i class="fas fa-fw fa-sign-out-alt"></i>
+            <span>Logout</span></a>
     </li>
 </ul>

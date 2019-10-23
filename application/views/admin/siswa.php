@@ -15,7 +15,7 @@
 
 		<div class="container-fluid">
 
-	<h1>Data Siswa<br></h1>
+	<h1><center>Data Siswa</center><br></h1>
 	    
 	<?php if($this->session->flashdata('message') == TRUE):?>
 	<div class="alert alert-success alert-dismissible" role="alert">
@@ -25,11 +25,17 @@
   <strong>Sukses !</strong> Data Berhasil Disimpan ...
 </div> 
 <?php endif; ?>
-	<p align="right">
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>
+<form action="<?=site_url('admin/siswa/cari')?>" method="post">
+	<input type="text" placeholder="Cari Berdasarkan Nama" name="cari">
+  <button type="submit" class="btn btn-success"  value="Cari" ><i class="fa fa-search"></i></button>
+  <button type="button" class="btn btn-primary" style="float: right;" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-plus"></i>
  Tambah Siswa
 </button>
-</p>
+</form>
+
+    
+
+
 	
 	<br>
 		<table class="table">
@@ -82,6 +88,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
+
         <h5 class="modal-title" id="exampleModalLabel">Tambah Siswa</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>

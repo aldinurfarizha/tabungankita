@@ -15,7 +15,7 @@
 
 		<div class="container-fluid">
 
-	<h1>Setoran<br></h1>
+	<center><h1>Setoran<br></h1></center>
 	    
 	<?php if($this->session->flashdata('message') == TRUE):?>
 	<div class="alert alert-success alert-dismissible" role="alert">
@@ -28,6 +28,10 @@
 	
 	
 	<br>
+	<form action="<?=site_url('admin/siswa/cari')?>" method="post">
+	<input type="text" placeholder="Cari Berdasarkan Nama" name="cari">
+  <button type="submit" class="btn btn-success"  value="Cari" ><i class="fa fa-search"></i></button>
+</form>
 		<table class="table">
 	
 <tr>

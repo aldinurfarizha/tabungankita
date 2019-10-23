@@ -2,7 +2,7 @@
 <footer class="sticky-footer">
   <div class="container my-auto">
     <div class="copyright text-center my-auto">
-      <span>Copyright © <?php echo SITE_NAME ." ". Date('Y') ?></span>
+      <span>Copyright Tabungan Kita @KP 59 Uniku 2019</span>
     </div>
   </div>
 </footer>
