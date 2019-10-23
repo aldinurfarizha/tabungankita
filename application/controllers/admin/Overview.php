@@ -8,7 +8,10 @@ class Overview extends CI_Controller {
 
 	public function index()
 	{
-        // load view admin/overview.php
-        $this->load->view("admin/overview");
+		$data['saldo']=$this->m_overview->tampil_saldo();
+		$data['siswa']=$this->m_overview->tampil_jumlah_siswa();
+		$data['setor']=$this->m_overview->tampil_setor();
+		$data['penarikan']=$this->m_overview->tampil_penarikan();
+        $this->load->view("admin/overview",$data);
 	}
 }
