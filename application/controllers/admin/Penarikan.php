@@ -8,8 +8,29 @@ class Penarikan extends CI_Controller {
 
 	public function index()
 	{
-
-		$data['data']=$this->m_siswa->tampil_siswa();
+		{
+			if($this->session->userdata('level')=='1'){
+				$data['data']=$this->m_siswa->tampil_siswa();
+				$this->load->view('admin/penarikan',$data);
+			}
+			else{
+				if($this->session->userdata('level')=='2'){
+				
+					$data['data']=$this->m_siswa->tampil_siswa_kelas();
+					$this->load->view('admin/penarikan',$data);
+					}
+					else{
+						redirect('auth');
+					}
+			}
+		}
+	
+	}
+	public function cari(){
+		
+		$nama=$this->input->post('cari');
+		$this->m_siswa->cari_siswa($nama);
+		$data['data']=$this->m_siswa->cari_siswa($nama);
 		$this->load->view('admin/penarikan',$data);
 	}
 	public function penarikan(){

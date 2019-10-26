@@ -28,7 +28,7 @@
 	
 	
 	<br>
-	<form action="<?=site_url('admin/siswa/cari')?>" method="post">
+	<form action="<?=site_url('admin/setoran/cari')?>" method="post">
 	<input type="text" placeholder="Cari Berdasarkan Nama" name="cari">
   <button type="submit" class="btn btn-success"  value="Cari" ><i class="fa fa-search"></i></button>
 </form>

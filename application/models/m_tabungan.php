@@ -16,7 +16,8 @@ class m_tabungan extends CI_Model{
         siswa.nama,
         siswa.jenis_kelamin,
         siswa.alamat,
-        siswa.telepon
+        siswa.telepon,
+        siswa.kelas
           
         from 
         siswa, tabungan

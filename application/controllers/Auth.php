@@ -18,7 +18,9 @@ class Auth extends CI_Controller {
                $row=$query->row();
                $params=array(
                    'userid'=>$row->user_id,
-                   'level'=>$row->level
+                   'level'=>$row->level,
+                   'username'=>$row->username,
+                   'nama'=>$row->nama
                );
                $this->session->set_userdata($params);
                echo"<script>

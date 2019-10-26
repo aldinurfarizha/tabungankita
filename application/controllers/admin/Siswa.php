@@ -8,9 +8,15 @@ class Siswa extends CI_Controller {
 
 	public function index()
 	{
-
-		$data['data']=$this->m_siswa->tampil_siswa();
-		$this->load->view('admin/siswa',$data);
+		if($this->session->userdata('level')=='1'){
+			$data['data']=$this->m_siswa->tampil_siswa();
+			$this->load->view('admin/siswa',$data);
+		
+		}else{
+			
+				$this->load->view("login");
+		}
+		
 	}
 	public function cari(){
 		
@@ -25,12 +31,14 @@ class Siswa extends CI_Controller {
 		$jenis_kelamin	=$this->input->post('jenis_kelamin');
 		$alamat			=$this->input->post('alamat');
 		$telepon		=$this->input->post('telepon');
+		$kelas			=$this->input->post('kelas');
 		$data = array(
 			'id_siswa'			=> $id_siswa,
 			'nama'				=> $nama,
 			'jenis_kelamin'		=> $jenis_kelamin,
 			'alamat'			=> $alamat,
 			'telepon'			=> $telepon,
+			'kelas	'			=> $kelas,
 		);
 		$res=$this->m_siswa->input_data($data, 'siswa');
 		$this->session->set_flashdata('message', 'Data Berhasil Di Input');
@@ -48,8 +56,9 @@ class Siswa extends CI_Controller {
 		$nama=$this->input->post('nama');
 		$alamat=$this->input->post('alamat');
 		$telepon=$this->input->post('telepon');
+		$kelas=$this->input->post('kelas');
 	
-		$this->m_siswa->update_siswa($id_siswa,$nama,$alamat,$telepon);
+		$this->m_siswa->update_siswa($id_siswa,$nama,$alamat,$telepon,$kelas);
 	
 		redirect('admin/siswa');
     }

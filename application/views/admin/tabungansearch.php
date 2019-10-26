@@ -17,7 +17,7 @@
 
 <center><h1>Data Tabungan<br></h1></center>
 	<form action="<?=site_url('admin/tabungan/cari')?>" method="post">
-	<input type="text" placeholder="Cari Berdasarkan NISN" name="cari" required>
+	<input type="text" placeholder="Cari berdasarkan NISN" name="cari" required>
   <button type="submit" class="btn btn-primary"  value="Cari" ><i class="fa fa-search"></i></button>
 </form>
 	<?php if($this->session->flashdata('message') == TRUE):?>
@@ -40,7 +40,6 @@
     <th>NISN</th>
 	<th>Nama</th>
 	<th>Alamat</th>
-	<th>Kelas</th>
 	<th>Saldo</th>
 	<th>Pilihan</th>
 
@@ -53,9 +52,8 @@
                         $id_siswa=$sws['id_siswa'];
                         $nama=$sws['nama'];
                         $alamat=$sws['alamat'];
-                        $penarikan=$sws['jumlah_penarikan'];
-						$setoran=$sws['jumlah_setoran'];
-						$kelas=$sws['kelas'];
+                        $saldo=$sws['saldo'];
+                       
             
                 ?>
 <tr>
@@ -63,8 +61,7 @@
 	<td><?php echo $id_siswa;?></td>
 	<td><?php echo $nama;?></td>
 	<td><?php echo $alamat;?></td>
-	<td><?php echo $kelas;?></td>
-	<td><?php echo $setoran-$penarikan;?></td>
+	<td><?php echo $saldo;?></td>
 	<td><?php echo anchor ('admin/detail/rinci/'.$id_siswa, '<div class="btn btn-primary btn-sm"><i class ="fa fa-edit">Detail</i></div>')?></td>
 	
 		

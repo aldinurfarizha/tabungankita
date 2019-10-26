@@ -46,6 +46,7 @@
 	<th>Jenis Kelamin</th>
 	<th>Alamat</th>
 	<th>Telepon</th>
+  <th>Kelas</th>
 	<th>Hapus</th>
 	<th>Edit</th>
 </tr>
@@ -59,6 +60,7 @@
                         $jenis_kelamin=$sws['jenis_kelamin'];
                         $alamat=$sws['alamat'];
                         $telepon=$sws['telepon'];
+                        $kelas=$sws['kelas'];
                 ?>
 <tr>
 	<td><?php echo $id_siswa;?></td>
@@ -66,6 +68,8 @@
 	<td><?php echo $jenis_kelamin;?></td>
 	<td><?php echo $alamat;?></td>
 	<td><?php echo $telepon;?></td>
+  <td><?php echo $kelas;?></td>
+  
 	<td><a class="btn btn-xs btn-warning" href="#modalEditSiswa<?php echo $id_siswa?>" data-toggle="modal" title="Edit"><span class="fa fa-edit"></span> Edit</a></td>
     <td><a class="btn btn-xs btn-danger" href="#modalHapusSiswa<?php echo $id_siswa?>" data-toggle="modal" title="Hapus"><span class="fa fa-close"></span> Hapus</a></td>
 		
@@ -105,6 +109,40 @@
 		<input type="text" name="alamat" class="form-control"required>
 		<label>Telepon</label>
 		<input type="number" name="telepon" class="form-control"required>
+    <label>Kelas</label>
+		<select name="kelas" class="selectpicker show-tick form-control" data-live-search="true" title="Pilih Kelas" data-width="80%" placeholder="Pilih Kelas" required>
+                                <option>-Pilih Kelas-</option>
+                                <option>1A</option>
+                                <option>1B</option>
+                                <option>1C</option>
+                                <option>1D</option>
+                                <option>1E</option>
+                                <option>2A</option>
+                                <option>2B</option>
+                                <option>2C</option>
+                                <option>2D</option>
+                                <option>2E</option>
+                                <option>3A</option>
+                                <option>3B</option>
+                                <option>3C</option>
+                                <option>3D</option>
+                                <option>3E</option>
+                                <option>4A</option>
+                                <option>4B</option>
+                                <option>4C</option>
+                                <option>4D</option>
+                                <option>4E</option>
+                                <option>5A</option>
+                                <option>5B</option>
+                                <option>5C</option>
+                                <option>5D</option>
+                                <option>5E</option>
+                                <option>6A</option>
+                                <option>6B</option>
+                                <option>6C</option>
+                                <option>6D</option>
+                                <option>6E</option>
+                             </select>
 		<label>Jenis Kelamin</label>
 		<div class="radio" required>
 			<label>
@@ -176,6 +214,44 @@
                                 <input name="telepon" class="form-control" type="text" value="<?php echo $telepon;?>" placeholder="Telepon..." required>
                        
                         </div>
+        <div class="form-group">
+                            <label>Kelas</label>
+                          
+                            <select name="kelas" class="selectpicker show-tick form-control"  data-live-search="true" title="Pilih Kelas" data-width="80%" placeholder="Pilih Kelas" required>
+                                <option>-Pilih Kelas-</option>
+                                <option>1A</option>
+                                <option>1B</option>
+                                <option>1C</option>
+                                <option>1D</option>
+                                <option>1E</option>
+                                <option>2A</option>
+                                <option>2B</option>
+                                <option>2C</option>
+                                <option>2D</option>
+                                <option>2E</option>
+                                <option>3A</option>
+                                <option>3B</option>
+                                <option>3C</option>
+                                <option>3D</option>
+                                <option>3E</option>
+                                <option>4A</option>
+                                <option>4B</option>
+                                <option>4C</option>
+                                <option>4D</option>
+                                <option>4E</option>
+                                <option>5A</option>
+                                <option>5B</option>
+                                <option>5C</option>
+                                <option>5D</option>
+                                <option>5E</option>
+                                <option>6A</option>
+                                <option>6B</option>
+                                <option>6C</option>
+                                <option>6D</option>
+                                <option>6E</option>
+                             </select>
+                        </div>
+
 
       </div>
       <div class="modal-footer">

@@ -24,8 +24,13 @@ class m_siswa extends CI_Model{
         $hsl=$this->db->query("SELECT * FROM siswa ");
         return $hsl;
     }
-    function update_siswa($id_siswa,$nama,$alamat,$telepon){
-		$hsl=$this->db->query("UPDATE siswa SET nama='$nama',alamat='$alamat',telepon='$telepon' WHERE id_siswa='$id_siswa'");
+    function tampil_siswa_kelas(){
+      $kelas=$this->session->userdata('nama');
+      $hsl=$this->db->query("SELECT * FROM siswa where kelas='$kelas' ");
+      return $hsl;
+  }
+    function update_siswa($id_siswa,$nama,$alamat,$telepon,$kelas){
+		$hsl=$this->db->query("UPDATE siswa SET nama='$nama',alamat='$alamat',telepon='$telepon',kelas='$kelas' WHERE id_siswa='$id_siswa'");
 		return $hsl;
     }
     function hapus_siswa($id_siswa){

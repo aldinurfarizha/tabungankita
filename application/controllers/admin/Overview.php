@@ -15,7 +15,14 @@ class Overview extends CI_Controller {
         $this->load->view("admin/overview",$data);
 	
 	}else{
-		echo "kamu ga ada akses";
+		if($this->session->userdata('level')=='2'){
+			
+			redirect('admin/tabungan');
+		
+		}
+		else{
+			$this->load->view("login");
+		}
     }
 }
 		

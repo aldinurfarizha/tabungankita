@@ -11,4 +11,10 @@ class Detail extends CI_Controller {
 		$data['tabungan']=$this->m_detail->detail_tabungan($id_siswa);
         $this->load->view("admin/detail",$data);
     }
+    public function android ($id_siswa)
+    {
+		$data['siswa']=$this->m_detail->detail_siswa($id_siswa);
+		$data['tabungan']=$this->m_detail->detail_tabungan($id_siswa);
+        $this->load->view("admin/lihat",$data);
+    }
 }
