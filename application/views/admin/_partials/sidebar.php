@@ -53,12 +53,7 @@
             <i class="fas fa-fw fa-upload"></i>
             <span>Setoran</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=site_url('admin/penarikan')?>">
-            <i class="fas fa-fw fa-download "></i>
-            <span>Penarikan</span></a>
-    </li>
-
+  
     <li class="nav-item">
         <a class="nav-link" href="<?=site_url('Auth/logout')?>">
             <i class="fas fa-fw fa-sign-out-alt"></i>

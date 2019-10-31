@@ -3,13 +3,13 @@
 <head>
 	<?php $this->load->view("admin/_partials/head.php") ?>
 </head>
-<body id="page-top">
+<body onload="window.print()"  id="page-top">
 
-<?php $this->load->view("admin/_partials/navbar.php") ?>
+
 
 <div id="wrapper">
 
-	<?php $this->load->view("admin/_partials/sidebar.php") ?>
+
 
 	<div id="content-wrapper">
 
@@ -17,7 +17,7 @@
 
 	<h1>Detail Tabungan<br></h1>
 	<p align="right">
-	<a class="btn btn-primary" href="http://localhost/tabungankita/admin/tabungan">Kembali</a>
+
 </p>
 	<?php if($this->session->flashdata('message') == TRUE):?>
 	<div class="alert alert-success alert-dismissible" role="alert">
@@ -38,8 +38,8 @@
                         $no++;
 						$nama=$sws['nama'];
 						$telepon=$sws['telepon'];
-						$alamat=$sws['alamat'];
-						                   
+                        $alamat=$sws['alamat'];
+                    
             
                 ?>
 	<table class="table">
@@ -96,9 +96,8 @@
                         $no++;
 						$setoran=$tbg['setoran'];
 						$penarikan=$tbg['penarikan'];
-						$saldo=$tbg['saldo'];
+                        $saldo=$tbg['saldo'];
 						$tgl=$tbg['tgl']; 
-                    
             
                 ?>
 			<tr>

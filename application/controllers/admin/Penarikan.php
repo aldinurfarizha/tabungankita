@@ -14,13 +14,7 @@ class Penarikan extends CI_Controller {
 				$this->load->view('admin/penarikan',$data);
 			}
 			else{
-				if($this->session->userdata('level')=='2'){
-				
-					$data['data']=$this->m_siswa->tampil_siswa_kelas();
-					$this->load->view('admin/penarikan',$data);
-					}
-					else{
-						redirect('auth');
+				redirect('auth');
 					}
 			}
 		}

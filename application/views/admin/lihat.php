@@ -86,6 +86,9 @@
 						<th>
 							Saldo
 						</th>
+						<th>
+							Tanggal
+						</th>
 					</tr>
 					<?php 
                   $no=0;
@@ -94,7 +97,7 @@
 						$setoran=$tbg['setoran'];
 						$penarikan=$tbg['penarikan'];
                         $saldo=$tbg['saldo'];
-                    
+						$tgl=$tbg['tgl']; 
             
                 ?>
 			<tr>
@@ -102,6 +105,7 @@
 				<td><?php echo $setoran ; ?></td>
 				<td><?php echo $penarikan ; ?></td>
 				<td><?php echo $saldo ; ?></td>
+				<td><?php echo $tgl ; ?></td>
 				</tr>
 					<?php endforeach; ?>
 <?php $this->load->view("admin/_partials/scrolltop.php") ?>

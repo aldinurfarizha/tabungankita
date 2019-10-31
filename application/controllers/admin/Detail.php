@@ -17,4 +17,10 @@ class Detail extends CI_Controller {
 		$data['tabungan']=$this->m_detail->detail_tabungan($id_siswa);
         $this->load->view("admin/lihat",$data);
     }
+    public function print ($id_siswa)
+    {
+		$data['siswa']=$this->m_detail->detail_siswa($id_siswa);
+		$data['tabungan']=$this->m_detail->detail_tabungan($id_siswa);
+        $this->load->view("admin/print",$data);
+    }
 }

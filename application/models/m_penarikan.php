@@ -18,7 +18,8 @@ class m_penarikan extends CI_Model{
         $hsl=$this->db->query("insert INTO tabungan SET
         id_siswa = $id_siswa,
         penarikan = $penarikan,
-        saldo = $row->satota-$penarikan
+        saldo = $row->satota-$penarikan,
+        tgl = CURDATE(); 
         ");
       
         return $hsl;

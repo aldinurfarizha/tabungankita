@@ -43,7 +43,7 @@
 	<th>Kelas</th>
 	<th>Saldo</th>
 	<th>Pilihan</th>
-
+	<th>Print</th>
 </tr>
 
 <?php 
@@ -66,6 +66,7 @@
 	<td><?php echo $kelas;?></td>
 	<td><?php echo $setoran-$penarikan;?></td>
 	<td><?php echo anchor ('admin/detail/rinci/'.$id_siswa, '<div class="btn btn-primary btn-sm"><i class ="fa fa-edit">Detail</i></div>')?></td>
+	<td><?php echo anchor ('admin/detail/print/'.$id_siswa, '<div class="btn btn-success btn-sm"><i class ="fa fa-print">Print</i></div>')?></td>
 	
 		
 </tr>
