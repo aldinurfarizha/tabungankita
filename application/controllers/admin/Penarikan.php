@@ -19,7 +19,7 @@ class Penarikan extends CI_Controller {
 			}
 		}
 	
-	}
+	
 	public function cari(){
 		
 		$nama=$this->input->post('cari');
