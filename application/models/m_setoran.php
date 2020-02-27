@@ -21,8 +21,10 @@ class m_setoran extends CI_Model{
         saldo = $row->satota+$setoran,
         tgl = CURDATE(); 
         ");
+        $hsl2=$this->db->query("UPDATE siswa set saldo = $row->satota+$setoran where id_siswa = $id_siswa");
       
         return $hsl;
+        return $hsl2;
     }
     
    

@@ -26,23 +26,31 @@ class Siswa extends CI_Controller {
 		$this->load->view('admin/siswa',$data);
 	}
 	public function tambah_aksi(){
-		$id_siswa		=$this->input->post('id_siswa');
-		$nama			=$this->input->post('nama');
-		$jenis_kelamin	=$this->input->post('jenis_kelamin');
-		$alamat			=$this->input->post('alamat');
-		$telepon		=$this->input->post('telepon');
-		$kelas			=$this->input->post('kelas');
-		$data = array(
-			'id_siswa'			=> $id_siswa,
-			'nama'				=> $nama,
-			'jenis_kelamin'		=> $jenis_kelamin,
-			'alamat'			=> $alamat,
-			'telepon'			=> $telepon,
-			'kelas	'			=> $kelas,
-		);
-		$res=$this->m_siswa->input_data($data, 'siswa');
-		$this->session->set_flashdata('message', 'Data Berhasil Di Input');
-		redirect('admin/siswa');
+		$result=$this->m_siswa->cek_id($this->input->post('id_siswa'));
+		if($result->num_rows()==1){
+			echo "NISN Yang di tambahkan Telah ada, Periksa Kembali NISN siswa yang akan di tambahkan";
+		}
+		else{
+			$id_siswa		=$this->input->post('id_siswa');
+			$nama			=$this->input->post('nama');
+			$jenis_kelamin	=$this->input->post('jenis_kelamin');
+			$alamat			=$this->input->post('alamat');
+			$telepon		=$this->input->post('telepon');
+			$kelas			=$this->input->post('kelas');
+			$data = array(
+				'id_siswa'			=> $id_siswa,
+				'nama'				=> $nama,
+				'jenis_kelamin'		=> $jenis_kelamin,
+				'alamat'			=> $alamat,
+				'telepon'			=> $telepon,
+				'kelas	'			=> $kelas,
+			);
+			$res=$this->m_siswa->input_data($data, 'siswa');
+			$this->session->set_flashdata('message', 'Data Berhasil Di Input');
+			redirect('admin/siswa');
+		}
+
+		
 	}
 	public function hapus_siswa()
     {

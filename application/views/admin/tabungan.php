@@ -56,15 +56,17 @@
                         $penarikan=$sws['jumlah_penarikan'];
 						$setoran=$sws['jumlah_setoran'];
 						$kelas=$sws['kelas'];
+						
             
                 ?>
 <tr>
+<?php $total=$setoran-$penarikan?>
 	<td><?php echo $no;?></td>
 	<td><?php echo $id_siswa;?></td>
 	<td><?php echo $nama;?></td>
 	<td><?php echo $alamat;?></td>
 	<td><?php echo $kelas;?></td>
-	<td><?php echo $setoran-$penarikan;?></td>
+	<td><?php echo "Rp. ".number_format($total, 0, ".", ".");?></td>
 	<td><?php echo anchor ('admin/detail/rinci/'.$id_siswa, '<div class="btn btn-primary btn-sm"><i class ="fa fa-edit">Detail</i></div>')?></td>
 	<td><?php echo anchor ('admin/detail/print/'.$id_siswa, '<div class="btn btn-success btn-sm"><i class ="fa fa-print">Print</i></div>')?></td>
 	

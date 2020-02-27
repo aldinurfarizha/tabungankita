@@ -21,5 +21,9 @@ class m_detail extends CI_Model{
         order by id_tabungan asc");
         return $hsl;
     }
+    function detail_tabungan_bulan($bulan, $id_siswa){
+        $hsl=$this->db->query(" select  * from tabungan where id_siswa =$id_siswa AND MONTH(tgl)=$bulan order by id_tabungan asc");
+        return $hsl;
+    }
 }
 ?>

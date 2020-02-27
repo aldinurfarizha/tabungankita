@@ -69,7 +69,7 @@
 				<div class="card-body-icon">
 					<i class="fas fa-fw fa-usd"></i>
 				</div>
-				<div class="mr-5"><h3>Rp. <?php echo $a_saldo;?></h3> Total Saldo Tabungan</div>
+				<div class="mr-5"><h3><?php echo "Rp. ".number_format($a_saldo, 0, ".", ".");?></h3> Total Saldo Tabungan</div>
 				</div>
 			
 			</div>
@@ -92,7 +92,7 @@
 				<div class="card-body-icon">
 					<i class="fas fa-fw fa-shopping-cart"></i>
 				</div>
-				<div class="mr-5"><h3>Rp. <?php echo $a_setor;?></h3> Total Setor</div>
+				<div class="mr-5"><h3><?php echo "Rp. ".number_format($a_setor, 0, ".", ".");?></h3> Total Setor</div>
 				</div>
 				
 			</div>
@@ -103,7 +103,7 @@
 				<div class="card-body-icon">
 					<i class="fas fa-fw fa-life-ring"></i>
 				</div>
-				<div class="mr-5"><h3>Rp. <?php echo $a_penarikan;?></h3> Total Penarikan</div>
+				<div class="mr-5"><h3><?php echo "Rp. ".number_format($a_penarikan, 0, ".", ".");?></h3> Total Penarikan</div>
 				</div>
 			</div>
 			</div>

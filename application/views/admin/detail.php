@@ -103,9 +103,30 @@
                 ?>
 			<tr>
 				<td><?php echo $no ; ?></td>
-				<td><?php echo $setoran ; ?></td>
-				<td><?php echo $penarikan ; ?></td>
-				<td><?php echo $saldo ; ?></td>
+				<td><?php 
+				if (empty($setoran)){
+					echo $setoran;
+				}
+					else {
+						echo "Rp. ".number_format($setoran, 0, ".", ".");
+					}
+				 ?></td>
+				<td><?php 
+				if (empty($penarikan)){
+					echo $penarikan;
+				}
+					else {
+						echo "Rp. ".number_format($penarikan, 0, ".", ".");
+					}
+				 ?></td>
+				<td><?php 
+				if (empty($saldo)){
+					echo $saldo;
+				}
+					else {
+						echo "Rp. ".number_format($saldo, 0, ".", ".");
+					}
+				 ?></td>
 				<td><?php echo $tgl ; ?></td>
 				</tr>
 					<?php endforeach; ?>

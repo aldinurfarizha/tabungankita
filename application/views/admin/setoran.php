@@ -129,7 +129,7 @@
             <br>
             <div class="form-group">
                              <input name="id_siswa" value="<?php echo $id_siswa;?>" class="form-control" type="text"  placeholder="Jumlah Setor..." hidden>
-                                <input name="setoran" class="form-control" type="text"  placeholder="Jumlah Setor..." required>
+                              <center> <label for="setoran">Rp.</label> <input name="setoran" class="uang" type="text"  placeholder="Jumlah Setor..." required></center>
                           
                         </div>
       </div>
@@ -144,7 +144,16 @@
 <?php
         }
         ?>
-          
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+<script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+				$( '.uang' ).mask('0.000.000.000', {reverse: true});
+
+            })
+        </script>
 </body>
 </html>
 

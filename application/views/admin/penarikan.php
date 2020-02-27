@@ -28,6 +28,15 @@
   <strong>Sukses !</strong> Data Berhasil Disimpan ...
 </div> 
 <?php endif; ?>
+
+<?php if($this->session->flashdata('gagal') == TRUE):?>
+	<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+   <span aria-hidden="true">&times;</span>
+  </button>
+  <strong>Gagal !</strong> Saldo yang di tarik melebihi saldo yang tersedia ...
+</div> 
+<?php endif; ?>
 	
 	
 	<br>
@@ -84,7 +93,8 @@
                         $id_siswa=$sws['id_siswa'];
                         $nama=$sws['nama'];
                         $alamat=$sws['alamat'];
-                        $telepon=$sws['telepon'];
+						$telepon=$sws['telepon'];
+						$saldo=$sws['saldo'];
                 ?>
                 
 <div class="modal fade" id="modalEditSiswa<?php echo $id_siswa?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -124,11 +134,20 @@
 						: <?php echo $alamat ; ?>
 					</td>
 				</tr>
+				<tr>		
+					<td>
+						Penarikan Maximal
+					</td>
+					<td>
+						: <input name="saldomax" class="uang" type="text"  value="<?php echo $saldo;?>" readonly>
+					</td>
+				</tr>
 			</table>
             <br>
             <div class="form-group">
                              <input name="id_siswa" value="<?php echo $id_siswa;?>" class="form-control" type="text"  placeholder="Jumlah Setor..." hidden>
-                                <input name="penarikan" class="form-control" type="text"  placeholder="Jumlah penarikan..." required>
+							 <input name="max_total" class="uang" type="text"  value="<?php echo $saldo;?>" hidden>
+                                <center><label>Rp.</label><input name="penarikan" class="uang" type="text"  placeholder="Jumlah penarikan..." required></center>
                           
                         </div>
       </div>
@@ -143,7 +162,16 @@
 <?php
         }
         ?>
-          
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/igorescobar/jQuery-Mask-Plugin/1ef022ab/dist/jquery.mask.min.js"></script>
+		  <script type="text/javascript">
+            $(document).ready(function(){
+
+                // Format mata uang.
+				$( '.uang' ).mask('0.000.000.000', {reverse: true});
+
+            })
+        </script>
 </body>
 </html>
 

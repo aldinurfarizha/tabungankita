@@ -29,10 +29,20 @@ class Penarikan extends CI_Controller {
 	}
 	public function penarikan(){
 		$id_siswa=$this->input->post('id_siswa');
-		$penarikan=$this->input->post('penarikan');
-		$res=$this->m_penarikan->penarikan($id_siswa,$penarikan);
-		$this->session->set_flashdata('message', 'Data Berhasil Di Input');
-		redirect('admin/penarikan');
+		$angka1=$this->input->post('penarikan');
+		$penarikan= str_replace(".", "", $angka1);
+		$angka2=$this->input->post('max_total');
+		$saldomax= str_replace(".", "", $angka2);
+		if($saldomax>=$penarikan){
+			$res=$this->m_penarikan->penarikan($id_siswa,$penarikan);
+			$this->session->set_flashdata('message', 'Data Berhasil Di Input');
+			redirect('admin/penarikan');
+		}	
+		else{
+			$this->session->set_flashdata('gagal', 'Data gagal Di Input');
+			redirect('admin/penarikan');
+		}
+		
 	}
 	
 }

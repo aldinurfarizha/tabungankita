@@ -21,8 +21,9 @@ class m_penarikan extends CI_Model{
         saldo = $row->satota-$penarikan,
         tgl = CURDATE(); 
         ");
-      
+        $hsl2=$this->db->query("UPDATE siswa set saldo = $row->satota-$penarikan where id_siswa = $id_siswa");
         return $hsl;
+        return $hsl2;
     }
     
    
